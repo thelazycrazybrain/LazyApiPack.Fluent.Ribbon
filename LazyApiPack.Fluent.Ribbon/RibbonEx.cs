@@ -6,10 +6,10 @@ namespace LazyApiPack.Fluent.RibbonMerge
     using System.Linq;
     using System.Windows;
 
-    public static class RibbonMerger
+    public static class RibbonEx
     {
 
-        public static void Merge(Ribbon target, Ribbon source)
+        public static void Merge(this Ribbon target, Ribbon source)
         {
             var hic = new HeaderedControlComparer();
 
@@ -85,7 +85,7 @@ namespace LazyApiPack.Fluent.RibbonMerge
             }
         }
 
-        public static void Unmerge(Ribbon target, Ribbon source)
+        public static void Unmerge(this Ribbon target, Ribbon source)
         {
             var controls = GetMergedControls(target);
             if (controls != null)
@@ -134,7 +134,7 @@ namespace LazyApiPack.Fluent.RibbonMerge
         }
 
         public static readonly DependencyProperty MergeIndexProperty =
-            DependencyProperty.RegisterAttached("MergeIndex", typeof(int?), typeof(RibbonMerger), new PropertyMetadata(null));
+            DependencyProperty.RegisterAttached("MergeIndex", typeof(int?), typeof(RibbonEx), new PropertyMetadata(null));
 
         static List<MergedControl> GetMergedControls(DependencyObject obj)
         {
@@ -148,7 +148,7 @@ namespace LazyApiPack.Fluent.RibbonMerge
 
         // Using a DependencyProperty as the backing store for MergedControls.  This enables animation, styling, binding, etc...
         static readonly DependencyProperty MergedControlsProperty =
-            DependencyProperty.RegisterAttached("MergedControls", typeof(List<MergedControl>), typeof(RibbonMerger), new PropertyMetadata(null));
+            DependencyProperty.RegisterAttached("MergedControls", typeof(List<MergedControl>), typeof(RibbonEx), new PropertyMetadata(null));
 
 
         #region Helper classes

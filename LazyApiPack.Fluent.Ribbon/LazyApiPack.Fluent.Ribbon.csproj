@@ -4,7 +4,25 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <Title>The Lazy Crazy Brain Api Pack - Fluid Ribbon Extensions</Title>
+	  <Description>Provides extensions for the Fluent Ribbon Control.</Description>
+	  <Authors>Jodie Watson</Authors>
+	  <Copyright>Copyright (c) 2022-2024 Jodie Watson</Copyright>
+	  <PackageOutputPath>C:\LocalNugets\LazyApiPack\$(OutputPath)</PackageOutputPath>
+	  <AssemblyVersion>1.0.0</AssemblyVersion>
+	  <FileVersion>1.0.0</FileVersion>
+	  <Version>$(AssemblyVersion)</Version>
+	  <PackageProjectUrl>https://github.com/thelazycrazybrain/LazyApiPack.Fluent.Ribbon</PackageProjectUrl>
+	  <PackageReadmeFile>ReadMe.md</PackageReadmeFile>
+	  <RepositoryUrl>https://github.com/thelazycrazybrain/LazyApiPack.Fluent.Ribbon.git</RepositoryUrl>
+	  <PackageTags>Fluent;Ribbon;Merge;Extensions;StatusBar</PackageTags>
+	  <PackageReleaseNotes>Supports Statusbar merge;RibbonMerge is now an extension for the Ribbon.</PackageReleaseNotes>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
+  <ItemGroup>
+	  <None Update="ReadMe.md" Pack="True" PackagePath="\" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Fluent.Ribbon" Version="10.0.4" />
